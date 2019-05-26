@@ -5,8 +5,8 @@ object BeerSong {
     fun verses(start: Int, finish: Int): String {
         val verses = mutableListOf<String>()
 
-        for (i in start downTo finish) {
-            verses.add(getTopVerse(i) + "\n" + getBottomVerse(i-1))
+        start.downTo(finish).forEach{
+        verses.add(getTopVerse(it) + "\n" + getBottomVerse(it-1))
         }
         return verses.joinToString("\n\n", "", "\n" )
     }
